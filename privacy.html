@@ -1,0 +1,201 @@
+import { X, Shield, Lock, Database, Eye, Share2, RefreshCw } from 'lucide-react'
+
+interface PrivacyPolicyProps {
+  isOpen: boolean
+  onClose: () => void
+}
+
+export default function PrivacyPolicy({ isOpen, onClose }: PrivacyPolicyProps) {
+  if (!isOpen) return null
+
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-sm">
+      <div className="glass-card w-[90%] max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
+        <div className="flex items-center justify-between p-6 border-b border-white/10">
+          <div className="flex items-center gap-3">
+            <Shield className="w-6 h-6 text-purple-400" />
+            <h2 className="text-2xl font-bold text-white">用户隐私政策</h2>
+          </div>
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-white/10 rounded-full transition-colors"
+          >
+            <X className="w-6 h-6 text-white/70" />
+          </button>
+        </div>
+
+        <div className="flex-1 overflow-y-auto p-6 space-y-6">
+          <div className="space-y-4 text-white/80 leading-relaxed text-sm">
+            <p className="text-center text-lg font-bold text-purple-400">
+              珠宝恋人用户隐私政策
+            </p>
+
+            <div className="bg-purple-500/10 border border-purple-500/20 rounded-xl p-4 mb-4">
+              <p className="text-purple-300 font-bold text-center">
+                更新日期：2026年6月25日
+              </p>
+              <p className="text-white/60 text-center text-xs mt-2">
+                生效日期：2026年6月25日
+              </p>
+            </div>
+
+            <h3 className="text-white font-bold text-base flex items-center gap-2">
+              <Shield className="w-5 h-5 text-purple-400" />
+              一、引言
+            </h3>
+            <p>
+              紫道丹焰（海口）智能科技有限公司（以下简称"我们"）非常重视用户隐私和个人信息保护。本隐私政策旨在向您说明我们如何收集、使用、存储、共享和保护您的个人信息，以及您享有的相关权利。
+            </p>
+            <p>
+              请您在使用我们的产品和服务前，仔细阅读并充分理解本隐私政策。您使用或继续使用我们的服务即表示您已充分阅读、理解并同意接受本隐私政策的约束。
+            </p>
+
+            <h3 className="text-white font-bold text-base flex items-center gap-2">
+              <Database className="w-5 h-5 text-purple-400" />
+              二、我们收集的信息
+            </h3>
+            <p>为了向您提供服务，我们会收集以下信息：</p>
+            <ul className="list-disc list-inside space-y-1 pl-4">
+              <li><strong>账户信息：</strong>手机号码、密码（加密存储）</li>
+              <li><strong>使用信息：</strong>登录时间、登录次数、使用时长、功能使用记录</li>
+              <li><strong>设备信息：</strong>设备型号、操作系统版本、唯一设备标识符</li>
+              <li><strong>交互数据：</strong>与AI助手的对话记录（用于优化服务体验）</li>
+              <li><strong>支付信息：</strong>充值记录、消费记录（不包含支付密码）</li>
+              <li><strong>位置信息：</strong>基于您的授权，我们可能收集您的大致位置信息（仅用于推荐服务）</li>
+            </ul>
+
+            <h3 className="text-white font-bold text-base flex items-center gap-2">
+              <Eye className="w-5 h-5 text-purple-400" />
+              三、我们如何使用收集的信息
+            </h3>
+            <p>我们收集的信息将用于以下目的：</p>
+            <ul className="list-disc list-inside space-y-1 pl-4">
+              <li>创建和管理您的账户，提供身份验证服务</li>
+              <li>提供、维护和改进我们的产品和服务</li>
+              <li>处理您的付费请求和订阅服务</li>
+              <li>向您发送服务相关的通知和更新</li>
+              <li>分析用户行为，优化产品功能和用户体验</li>
+              <li>保护用户和平台的安全，防止欺诈行为</li>
+              <li>遵守法律法规和政府机关的要求</li>
+              <li>经您明确同意的其他用途</li>
+            </ul>
+
+            <h3 className="text-white font-bold text-base flex items-center gap-2">
+              <Lock className="w-5 h-5 text-purple-400" />
+              四、信息存储与保护
+            </h3>
+            <p>
+              我们采取多层次的安全措施保护您的个人信息：
+            </p>
+            <ul className="list-disc list-inside space-y-1 pl-4">
+              <li><strong>数据加密：</strong>采用行业标准加密技术对敏感信息进行加密存储</li>
+              <li><strong>访问控制：</strong>严格的权限管理，仅授权人员可访问用户数据</li>
+              <li><strong>安全审计：</strong>定期进行安全审计和漏洞扫描</li>
+              <li><strong>备份机制：</strong>数据定期备份，确保数据安全性和可恢复性</li>
+              <li><strong>传输加密：</strong>使用HTTPS协议保护数据传输安全</li>
+            </ul>
+            <p className="mt-2">
+              您的信息存储在中华人民共和国境内的服务器。如需跨境传输，我们将严格遵守法律法规要求并获得您的明确同意。
+            </p>
+            <p>
+              我们会采取合理措施尽可能降低安全风险，但互联网环境并非100%安全。请您妥善保管账户密码，不向他人透露。
+            </p>
+
+            <h3 className="text-white font-bold text-base flex items-center gap-2">
+              <Share2 className="w-5 h-5 text-purple-400" />
+              五、信息共享、转让与披露
+            </h3>
+            <p>
+              我们承诺对您的个人信息保密，不会向第三方出售您的个人信息。但以下情况除外：
+            </p>
+            <ul className="list-disc list-inside space-y-1 pl-4">
+              <li><strong>获得您的明确同意：</strong>在获得您明确同意后，我们会与第三方共享您的个人信息</li>
+              <li><strong>服务提供商：</strong>我们可能委托第三方服务商提供服务（如支付、云服务、AI服务），我们会要求其遵守保密义务</li>
+              <li><strong>法律法规要求：</strong>根据法律法规要求、政府机关的强制性要求或司法决定</li>
+              <li><strong>保护权益：</strong>为保护我们、用户或公众的权益、财产或安全所必需</li>
+              <li><strong>关联企业：</strong>在获得您同意的前提下，我们可能与关联企业共享信息以改善服务</li>
+            </ul>
+            <p className="mt-2">
+              我们会与第三方服务商签订严格的保密协议，要求其按照我们的要求、本隐私政策以及法律法规处理您的个人信息。
+            </p>
+
+            <h3 className="text-white font-bold text-base flex items-center gap-2">
+              <Database className="w-5 h-5 text-purple-400" />
+              六、您的权利
+            </h3>
+            <p>根据相关法律法规，您享有以下权利：</p>
+            <ul className="list-disc list-inside space-y-1 pl-4">
+              <li><strong>访问权：</strong>您有权访问我们持有的您的个人信息</li>
+              <li><strong>更正权：</strong>您有权要求更正不准确的个人信息</li>
+              <li><strong>删除权：</strong>您有权要求删除您的个人信息（在法律法规允许的范围内）</li>
+              <li><strong>撤回同意权：</strong>您有权撤回之前给予我们的同意</li>
+              <li><strong>注销账户：</strong>您可以随时申请注销账户，我们将在15个工作日内处理</li>
+              <li><strong>数据导出：</strong>您有权要求导出您的个人信息副本</li>
+              <li><strong>投诉举报：</strong>您有权向监管部门投诉我们的个人信息处理行为</li>
+            </ul>
+
+            <h3 className="text-white font-bold text-base flex items-center gap-2">
+              <Lock className="w-5 h-5 text-purple-400" />
+              七、未成年人保护
+            </h3>
+            <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 mb-4">
+              <p className="text-red-400 font-bold">
+                ⚠️ 重要提示：本软件仅限18岁及以上用户使用
+              </p>
+            </div>
+            <p>
+              我们非常重视未成年人的个人信息保护。根据相关法律法规，我们不向未满18周岁的未成年人提供服务。如果您是未成年人，请勿注册、登录或使用我们的服务。
+            </p>
+            <p>
+              如发现未成年人未经授权使用我们的服务，我们将立即采取措施删除相关信息并终止服务。
+            </p>
+
+            <h3 className="text-white font-bold text-base flex items-center gap-2">
+              <RefreshCw className="w-5 h-5 text-purple-400" />
+              八、本政策的更新
+            </h3>
+            <p>
+              我们可能会不时更新本隐私政策。更新后的政策将在本软件内公布，您继续使用我们的服务即表示您接受更新后的政策。
+            </p>
+            <p>
+              如有重大变更，我们会通过应用内通知、推送通知或其他方式告知您。
+            </p>
+
+            <h3 className="text-white font-bold text-base flex items-center gap-2">
+              <Shield className="w-5 h-5 text-purple-400" />
+              九、联系我们
+            </h3>
+            <p>
+              如您对本隐私政策有任何疑问、意见或建议，或需要行使您的权利，请通过以下方式联系我们：
+            </p>
+            <ul className="list-disc list-inside space-y-1 pl-4">
+              <li>客服微信号：cdcdc13513</li>
+              <li>微信公众号：珠宝欣赏聚财天下</li>
+              <li>淘宝店铺“财气珠宝大促店接私人定制”、微信店铺“财气珠宝店”、抖音店铺“财气珠宝店紫道丹焰公司“、小红书店铺“财气珠宝店-紫道丹焰公司”等（搜店铺）</li>
+            </ul>
+            <p className="mt-2">
+              我们将在15个工作日内回复您的请求。
+            </p>
+
+            <div className="mt-8 pt-4 border-t border-white/10">
+              <p className="text-white/50 text-xs text-center">
+                更新日期：2026年6月25日<br />
+                紫道丹焰（海口）智能科技有限公司<br />
+                海南省海口市龙华区大同街道龙华路15号财盛大厦19层-C155
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-6 border-t border-white/10">
+          <button
+            onClick={onClose}
+            className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-white font-bold hover:opacity-90 transition-opacity"
+          >
+            我已阅读并同意上述隐私政策
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
